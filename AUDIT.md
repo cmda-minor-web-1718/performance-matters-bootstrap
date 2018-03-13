@@ -39,3 +39,5 @@ Statistics:
 > First render 6.83s
 Total time: 22.18s  
 This one i don't fully understand, even though the image times didn't go down drastically, the total time did. The render time also slightly improved. Not that relevant for the first render.
+
+
