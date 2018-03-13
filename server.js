@@ -14,6 +14,8 @@ app.use((req, res, next) => { res.removeHeader('X-Powered-By'); next(); });
 // static routes
 app.use(routeStatic);
 app.use('/static', express.static(path.join(__dirname, baseDir), { etag: false, lastModified: false }));
+// Use a minify/gzip middleware to improve it
+
 
 // dynamic pages
 app.use(redirectIndices);
