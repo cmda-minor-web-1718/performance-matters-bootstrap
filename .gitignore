@@ -6,6 +6,7 @@
 .settings
 *.sublime-project
 *.sublime-workspace
+package-lock.json
 
 # npm cruft
 npm-debug.log
