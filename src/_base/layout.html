@@ -6,6 +6,7 @@
     <link href="/dist/css/fonts.css" rel="stylesheet">
     <link href="/dist/css/bootstrap.css" rel="stylesheet">
     <link href="/assets/css/src/docs.css" rel="stylesheet">
+    <script src="/assets/js/vendor/fontfaceobserver.js"></script>
 
     {% block head_extra %}{% endblock %}
 </head>
@@ -18,6 +19,19 @@
     <script src="/dist/js/bootstrap.js"></script>
     <script src="/assets/js/docs.min.js"></script>
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+
+      var font = new fontfaceobserver('source_sans_pro')
+      var html = document.documentElement
+
+      font.load().then(function(){
+        html.className += 'fonts-loaded'
+      })
+
+
+    </script>
+
     {% block scripts_extra %}{% endblock %}
 </body>
 </html>
