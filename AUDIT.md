@@ -63,9 +63,15 @@ Advise: For minification purposes, a NPM minifier is recommended. This way, all 
 ## Step 4: Critical CSS[Initial page]
 Tool used to calculate critical CSS: https://jonassebastianohlsson.com/criticalpathcssgenerator/ 
 
-['Javascript'](auditimg/before-critical-css.png)
+!['before critical css'](auditimg/before-critical-css.png)
 Statistics:
-* bootstrap.js 2.02s 68.1KB
-* ie10-viewport-bug-workaround.js 2.08s 641B
+* fonts.min.css 990b 2.02s (TTFB 2.02s), actual download 1.64ms
+* bootstrap.min.css 6.6kb (TTFB 2.04s), actual download 292.53 ms 
+* docs.min.css (TTFB 2.08s), actual download 909.60 ms
 > First render 6.81s
 Total time 22.18s
+
+!['aftercritical css'](auditimg/after-critical-css.png)
+HTML became 16.0kb, and took a total of 2.31s to load. The first render shot up, making the perceived render 'instant'. The html file however, is above the recommended 14kb so it needs 2 tcp cycles, but this seems worth it looking at the results :)
+> First render 326ms
+total time 17.37s
