@@ -1,18 +1,16 @@
-# Performance matters
+# Loading font.
+A part of critical css.
 
-## Project setup
+## Loading the custom font later.
+With this piece of code it will be will focus on the  html rendering. When its done it will add a class to render  
+the font.
+```
 
-This project serves an adapted version of the [Bootstrap documentation website](http://getbootstrap.com/). It is based on the [github pages branche of Bootstrap](https://github.com/twbs/bootstrap/tree/gh-pages). 
+  var font = new fontfaceobserver('source_sans_pro')
+  var html = document.documentElement
 
-Differences from actual Bootstrap documentation:
+  font.load().then(function(){
+    html.className += 'fonts-loaded'
+  })
 
-- Added custom webfont
-- Removed third party scripts
-- The src directory is served with [Express](https://expressjs.com/).
-- Templating is done with [Nunjucks](https://mozilla.github.io/nunjucks/)
-
-## Getting started
-
-- Install dependencies: `npm install`
-- Serve: `npm start`
-- Expose localhost: `npm run expose`
+```
